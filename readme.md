@@ -1,6 +1,6 @@
 # query slider plugin
 
-## use 
+## use
 
 ```html
 
