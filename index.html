@@ -43,7 +43,6 @@
   index
   <div id="ss"></div>
   <div class="tt">
-
   </div>
   <span>0</span>
   <div class="tt"></div>
@@ -53,8 +52,8 @@
   <script>
     $(function () {
       $('.tt').slider({ 
-        val: 0, 
-        min: 0,
+        val: 30, 
+        min: 10,
         max: 100,
         onChange: function(e, val) {
           $(this).next('span').text(val);
@@ -67,7 +66,7 @@
       //   console.log(res);
       // })
       setTimeout(()=>{
-        // $('.tt').slider('setVal', 18);
+        $('.tt').slider('setVal', 18);
       }, 1000)
     });
   </script>

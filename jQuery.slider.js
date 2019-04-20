@@ -1,7 +1,7 @@
 (function(window, undefined) {
   $.fn.slider = function(options) {
     switch (getType(options)) {
-      case 'String':
+      case 'String':  // 调用组件的方法
         var ret, args; // 返回值
         args = Array.prototype.slice.call(arguments, 1);
         this.each(function(index, item) {
@@ -10,7 +10,7 @@
         });
         return ret;
       case 'Object':
-      case 'Undefined':
+      case 'Undefined': // 组件初始化
         break;
       default:
         throw new Error(
@@ -20,7 +20,7 @@
 
     // 为每个匹配的元素都创建对象，并存储。选择可能是多个的情况处理。
     this.each(function(index, item) {
-      $(item).data(new Slider(options, $(item)));
+      $(item).data(new Slider(options, $(item))); //$.fn.data(); //
     });
   };
 
@@ -43,7 +43,7 @@
 
     // 储存当前slider实例所在的：jq对象
     this.target = target;
-    this.init();
+    this.init(); // 给用户传来的所有的设置做一些初始化， 绑定用户给的自定义事件，绑定dom处理逻辑
   }
 
   // 全局的默认设置参数
